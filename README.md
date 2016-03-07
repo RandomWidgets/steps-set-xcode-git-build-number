@@ -5,11 +5,13 @@ This is a Bitrise step to aid in CI. This step will generate a build number base
 ## How to use this Step 
 
 Int the bitrise.yml file for your workflow add this step before xcode-archive
-    - git::https://github.com/InVisionApp/steps-set-xcode-git-build-number.git@master: {}
+```
+- git::https://github.com/InVisionApp/steps-set-xcode-git-build-number.git@master: {}
+````
     
 ## How to test
 
-1. Download Bitrises CLI tool. http://devcenter.bitrise.io/docs/bitrise-command-line-interface-how-to-guide
+1. Download [Bitrises CLI tool](http://devcenter.bitrise.io/docs/bitrise-command-line-interface-how-to-guide).
 2. Clone this repo
 3. Create a file in the new repo named ".bitrise.secrets.yml"
 4. Add the line
