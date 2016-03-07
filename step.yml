@@ -1,0 +1,48 @@
+title: Set Xcode Git Build Number
+summary: |-
+  Sets the value of Bundle Number in the specified Info.plist files.
+description: |-
+  Set the value of Bundle Number in the project's Info.plist files to the specified build number.
+website: https://github.com/InVisionApp/steps-set-xcode-git-build-number
+source_code_url: https://github.com/InVisionApp/steps-set-xcode-git-build-number
+support_url: https://github.com/InVisionApp/steps-set-xcode-git-build-number/issues
+host_os_tags:
+  - "osx-10.10"
+project_type_tags:
+  - ios
+type_tags:
+  - build
+  - xcode
+dependencies:
+  - manager: _
+    name: xcode
+run_if: ".IsCI"
+inputs:
+  - plist_paths:
+    opts:
+      title: "Comma seperated list of Info.plist file paths"
+      description: |
+        Paths to the project's Info.plist files for the different targets. If this is empty the plists will be automatically detected.
+      is_required: true
+  - date_format: "%Y-%m-%d"
+    opts:
+      title: "Date format"
+      description: |
+        The date format used to create build number
+      is_required: true
+  - build_number_prefix: "DEVELOP"
+    opts:
+      title: "Build Number Format"
+      description: |
+        The format of the build number
+      is_required: true
+outputs:
+  - BUILD_NUMBER_OUTPUT:
+    opts:
+      title: "Build Number"
+      summary: The build number for the app
+      description: |
+        The build number for the app
+      is_expand: false
+      is_required: true
+      is_dont_change_value: true
