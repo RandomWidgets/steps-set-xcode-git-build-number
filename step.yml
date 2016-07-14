@@ -24,17 +24,11 @@ inputs:
       description: |
         Paths to the project's Info.plist files for the different targets. If this is empty the plists will be automatically detected.
       is_required: true
-  - date_format: "%Y-%m-%d"
+  - date_format: "%Y%m%d"
     opts:
       title: "Date format"
       description: |
         The date format used to create build number
-      is_required: true
-  - build_number_prefix: "DEVELOP"
-    opts:
-      title: "Build Number Format"
-      description: |
-        The format of the build number
       is_required: true
 outputs:
   - BUILD_NUMBER_OUTPUT:

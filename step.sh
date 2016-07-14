@@ -17,14 +17,10 @@ if [ -z "${date_format}" ] ; then
     exit 1
 fi
 
-if [ -z "${build_number_prefix}" ] ; then
-    echo " [!] Missing required input: build_number_prefix"
-    exit 1
-fi
-
 DATE=`date +$date_format`
 COMMIT=`git rev-parse --short HEAD`
-BUILD_NUMBER_OUTPUT="$build_number_prefix-$DATE.$COMMIT"
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+BUILD_NUMBER_OUTPUT="$DATE.$COMMIT.$BRANCH"
 
 for path in "${plist_array[@]}"
 do
